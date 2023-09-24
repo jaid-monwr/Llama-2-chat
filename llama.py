@@ -21,6 +21,7 @@ TEXT_FILE_URL = 'https://samples.clarifai.com/negative_sentence_12.txt'
 from clarifai_grpc.channel.clarifai_channel import ClarifaiChannel
 from clarifai_grpc.grpc.api import resources_pb2, service_pb2, service_pb2_grpc
 from clarifai_grpc.grpc.api.status import status_code_pb2
+import streamlit as st
 
 def get_response(prompt):
     channel = ClarifaiChannel.get_grpc_channel()
