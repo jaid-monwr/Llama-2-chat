@@ -1,8 +1,12 @@
-
 ######################################################################################################
 # In this section, we set the user authentication, user and app ID, model details, and the URL of 
 # the text we want as an input. Change these strings to run your own example.
 ######################################################################################################
+
+from clarifai_grpc.channel.clarifai_channel import ClarifaiChannel
+from clarifai_grpc.grpc.api import resources_pb2, service_pb2, service_pb2_grpc
+from clarifai_grpc.grpc.api.status import status_code_pb2
+import streamlit as st
 
 # Your PAT (Personal Access Token) can be found in the portal under Authentification
 PAT = st.secrets.PAT
@@ -11,17 +15,12 @@ PAT = st.secrets.PAT
 USER_ID = st.secrets.USER_ID
 APP_ID = st.secrets.APP_ID
 # Change these to whatever model and text URL you want to use
-WORKFLOW_ID = 'Llama-2-workflow'
+WORKFLOW_ID = 'Llama-2-Workflow'
 TEXT_FILE_URL = 'https://samples.clarifai.com/negative_sentence_12.txt'
 
 ############################################################################
 # YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE TO RUN THIS EXAMPLE
 ############################################################################
-
-from clarifai_grpc.channel.clarifai_channel import ClarifaiChannel
-from clarifai_grpc.grpc.api import resources_pb2, service_pb2, service_pb2_grpc
-from clarifai_grpc.grpc.api.status import status_code_pb2
-import streamlit as st
 
 def get_response(prompt):
     channel = ClarifaiChannel.get_grpc_channel()
@@ -70,6 +69,6 @@ def get_response(prompt):
 
     # Uncomment this line to print the full Response JSON
     # print(results)
-    # print(response)
+    print(response)
 
     return response
