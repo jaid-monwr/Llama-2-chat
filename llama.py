@@ -5,7 +5,7 @@
 ######################################################################################################
 
 # Your PAT (Personal Access Token) can be found in the portal under Authentification
-PAT = 'f7db23195ec247d6b93ee91a8ec7c5bf'
+PAT = 'cf57e0904d3d4292b80df0a282d177d9'
 # Specify the correct user_id/app_id pairings
 # Since you're making inferences outside your app's scope
 USER_ID = 'jaid-monwr'
